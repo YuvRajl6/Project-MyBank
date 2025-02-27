@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Transactions</title>
+    <link rel="stylesheet" href="secure-transactions.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            background: #142850;
+            padding: 20px;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .secure-section {
+            background: white;
+            color: black;
+            margin: 40px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #142850;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #1e3c72;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #142850;
+        }
+
+        #transactionResult {
+            margin-top: 20px;
+            font-size: 16px;
+            color: black;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Secure Transactions</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="online banking-home.html">Online Banking</a></li>
+                <li><a href="secure-transactions.html">Secure Transactions</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="secure-section">
+        <h2>Ensure Safe and Secure Transactions</h2>
+        <p>Use our advanced security measures to protect your online transactions.</p>
+        <label for="transactionAmount">Enter Amount:</label>
+        <input type="number" id="transactionAmount" placeholder="e.g. 500">
+        
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" placeholder="Enter received OTP">
+        
+        <button onclick="processTransaction()">Proceed Securely</button>
+        
+        <div id="transactionResult"></div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Banking System. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        function processTransaction() {
+            const amount = document.getElementById("transactionAmount").value;
+            const otp = document.getElementById("otp").value;
+            const transactionResult = document.getElementById("transactionResult");
+            
+            if (!amount || amount <= 0) {
+                transactionResult.innerHTML = "<p style='color: red;'>Please enter a valid transaction amount.</p>";
+                return;
+            }
+            
+            if (!otp || otp.length !== 6 || isNaN(otp)) {
+                transactionResult.innerHTML = "<p style='color: red;'>Invalid OTP. Please enter a 6-digit OTP.</p>";
+                return;
+            }
+            
+            transactionResult.innerHTML = "<p style='color: blue;'>Processing transaction...</p>";
+            
+            setTimeout(() => {
+                transactionResult.innerHTML = `<p style='color: green;'>Transaction of $${amount} was successful! Thank you for banking with us.</p>`;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

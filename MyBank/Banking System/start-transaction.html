@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Transaction</title>
+    <link rel="stylesheet" href="start-transaction.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4a90e2, #1458a7);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background: #1c3b70;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .transaction-section {
+            background: white;
+            color: black;
+            margin: 40px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #1c3b70;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #4a90e2;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #1c3b70;
+        }
+
+        #transactionResult {
+            margin-top: 20px;
+            font-size: 16px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Start a Fast Transaction</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fast transaction-home-internal.html">Fast Transaction</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="transaction-section">
+        <h2>Enter Transaction Details</h2>
+        <label for="recipient">Recipient Account Number:</label>
+        <input type="text" id="recipient" placeholder="Enter account number">
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+
+        <label for="remarks">Remarks:</label>
+        <input type="text" id="remarks" placeholder="Enter remarks (optional)">
+
+        <button onclick="processTransaction()">Start Transaction</button>
+        
+        <div id="transactionResult"></div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Banking System. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        function processTransaction() {
+            const recipient = document.getElementById("recipient").value;
+            const amount = document.getElementById("amount").value;
+            const remarks = document.getElementById("remarks").value;
+            const transactionResult = document.getElementById("transactionResult");
+            
+            if (!recipient || recipient.length < 10) {
+                transactionResult.innerHTML = "<p style='color: red;'>Invalid recipient account number.</p>";
+                return;
+            }
+            
+            if (!amount || amount <= 0) {
+                transactionResult.innerHTML = "<p style='color: red;'>Please enter a valid amount.</p>";
+                return;
+            }
+            
+            transactionResult.innerHTML = "<p style='color: blue;'>Processing transaction...</p>";
+            
+            setTimeout(() => {
+                transactionResult.innerHTML = `<p style='color: green;'>Transaction of $${amount} to ${recipient} successful!</p>`;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
