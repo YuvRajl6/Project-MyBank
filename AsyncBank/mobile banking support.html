@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Banking Support</title>
+    <link rel="stylesheet" href="mobile-banking-support.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4a90e2, #1458a7);
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            background: #1c3b70;
+            padding: 20px;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .support-section {
+            background: white;
+            color: black;
+            margin: 40px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #1c3b70;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #4a90e2;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #1c3b70;
+        }
+
+        #supportResult {
+            margin-top: 20px;
+            font-size: 16px;
+            color: black;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mobile Banking Support</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="online banking-home.html">Online Banking</a></li>
+                <li><a href="mobile banking support.html">Mobile Banking Support</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="support-section">
+        <h2>Access Your Account Anytime, Anywhere</h2>
+        <p>Manage your finances conveniently with our mobile banking support.</p>
+        
+        <label for="mobileNumber">Enter Registered Mobile Number:</label>
+        <input type="tel" id="mobileNumber" placeholder="e.g. +1234567890">
+        
+        <label for="verificationCode">Enter Verification Code:</label>
+        <input type="text" id="verificationCode" placeholder="Enter received code">
+        
+        <button onclick="verifyMobileAccess()">Verify and Access</button>
+        
+        <div id="supportResult"></div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Banking System. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        function verifyMobileAccess() {
+            const mobileNumber = document.getElementById("mobileNumber").value;
+            const verificationCode = document.getElementById("verificationCode").value;
+            const supportResult = document.getElementById("supportResult");
+            
+            if (!mobileNumber || !/^[+0-9]{10,15}$/.test(mobileNumber)) {
+                supportResult.innerHTML = "<p style='color: red;'>Please enter a valid mobile number.</p>";
+                return;
+            }
+            
+            if (!verificationCode || verificationCode.length !== 6 || isNaN(verificationCode)) {
+                supportResult.innerHTML = "<p style='color: red;'>Invalid code. Please enter a 6-digit verification code.</p>";
+                return;
+            }
+            
+            supportResult.innerHTML = "<p style='color: blue;'>Verifying details...</p>";
+            
+            setTimeout(() => {
+                supportResult.innerHTML = `<p style='color: green;'>Verification successful! Welcome to mobile banking.</p>`;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Account Statements</title>
+    <link rel="stylesheet" href="view account statements.css">
+</head>
+<body>
+    <header>
+        <h1>View Account Statements</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="online banking-home.html">Online Banking</a></li>
+                <li><a href="view account statements.html">View Account Statements</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="statement-section">
+        <h2>Check Your Account Statements</h2>
+        <label for="accountNumber">Enter Account Number:</label>
+        <input type="text" id="accountNumber" placeholder="e.g. 1234567890">
+        <button onclick="fetchStatements()">View Statements</button>
+        
+        <div id="statementResult"></div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Banking System. All Rights Reserved.</p>
+    </footer>
+    
+    <script src="view account statements.js"></script>
+</body>
+</html>

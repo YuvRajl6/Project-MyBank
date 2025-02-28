@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open a New Account - Banking System</title>
+    <link rel="stylesheet" href="new-account-style.css">
+</head>
+<body>
+    <header>
+        <h1>Open a New Account</h1>
+
+    </header>
+    
+    <section class="form-section">
+        <h2>Create Your New Account</h2>
+        <p>Please fill in the details below to open a new account with us.</p>
+        
+        <form id="account-form" action="submit-account.php" method="POST" class="account-form">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="password">Create Password</label>
+            <input type="password" id="password" name="password" placeholder="Create a secure password" required>
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+            <button type="submit" class="btn-primary">Submit</button>
+        </form>
+    </section>
+
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <h2>Success!</h2>
+            <p>Your new account has been created successfully.</p>
+            <button onclick="window.location.href='index.html'" class="btn-primary">Go to Home</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Banking System. All Rights Reserved.</p>
+    </footer>
+
+    <script src="new-account-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('banking-bg.jpg') no-repeat center center/cover;
+    color: #1a1a1a;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header {
+    background-color: rgba(30, 58, 138, 0.9);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+.btn-primary, .btn-secondary {
+    background: linear-gradient(135deg, #f59e0b, #ff4500);
+    border: none;
+    padding: 14px 26px;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    background: linear-gradient(135deg, #d97706, #e63900);
+    transform: scale(1.05);
+}
+
+.hero {
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #f8d568;
+    background: url('banking-home.jpg') no-repeat center center/cover;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 50px 30px 0 30px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content {
+    background: rgba(6, 6, 6, 0.949);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+.hero-content h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.features {
+    padding: 80px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    margin: 30px;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    background: white;
+    padding: 30px;
+    width: 340px;
+    border-radius: 14px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s, box-shadow 0.4s;
+    text-align: center;
+}
+
+.feature-box:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background-color: #162d5a;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

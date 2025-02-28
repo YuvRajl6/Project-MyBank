@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Funds Instantly</title>
+    <link rel="stylesheet" href="transfer-funds.css">
+</head>
+<body>
+    <header>
+        <h1>Transfer Funds Instantly</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="online banking-home.html">Online Banking</a></li>
+                <li><a href="transfer-funds.html">Transfer Funds</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="transfer-form">
+        <h2>Enter Transfer Details</h2>
+        <form id="fundTransferForm">
+            <label for="senderAccount">Sender Account Number:</label>
+            <input type="text" id="senderAccount" required>
+            
+            <label for="receiverAccount">Receiver Account Number:</label>
+            <input type="text" id="receiverAccount" required>
+            
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" required>
+            
+            <label for="note">Note (optional):</label>
+            <input type="text" id="note">
+            
+            <button type="submit">Transfer Now</button>
+        </form>
+        <p id="transferStatus"></p>
+    </section>
+    
+    <section class="transfer-info">
+        <h2>Why Choose Instant Transfers?</h2>
+        <p>With our banking system, you can enjoy fast and secure fund transfers with just a few clicks.</p>
+        <ul>
+            <li>24/7 availability for hassle-free transactions.</li>
+            <li>End-to-end encryption to keep your funds safe.</li>
+            <li>Instant notifications on successful transfers.</li>
+            <li>Supports multiple currencies and cross-border transactions.</li>
+        </ul>
+    </section>
+    
+    <section class="customer-support">
+        <h2>Need Assistance?</h2>
+        <p>Our customer support team is available 24/7 to assist you with any transfer-related queries.</p>
+        <p><strong>Contact us:</strong> <a href="contact.html">Support Center</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Banking System. All Rights Reserved.</p>
+    </footer>
+    
+    <script src="transfer-funds.js"></script>
+</body>
+</html>
